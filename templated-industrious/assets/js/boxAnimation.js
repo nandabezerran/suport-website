@@ -8,12 +8,7 @@ function animateBox(){
     boxOpen = !boxOpen;
     firstTimeAnimation = false;
 }
-function isInViewport(){
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-}
+
 function animateBoxOnScroll(){
     console.log(isInViewPort(document.querySelector('.animacao')));
     if(firstTimeAnimation && isInViewPort(document.querySelector('.animacao'))){
@@ -23,6 +18,8 @@ function animateBoxOnScroll(){
 }
 
 function isInViewPort(el) {
+
+    var rect     = el.getBoundingClientRect(),
     vWidth   = window.innerWidth || document.documentElement.clientWidth,
     vHeight  = window.innerHeight || document.documentElement.clientHeight,
     efp      = function (x, y) { return document.elementFromPoint(x, y) };     
