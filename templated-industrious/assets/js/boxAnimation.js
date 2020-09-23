@@ -3,8 +3,8 @@ var firstTimeAnimation = true;
 window.onscroll = function() {animateBoxOnScroll()};
 
 function animateBox(){
-    gsap.to("#tampa",{yPercent:boxOpen ? 0 : -40,duration:1});
-    gsap.to("#base",{yPercent:boxOpen ? 0 :40,duration:1});
+    gsap.to("#tampa",{yPercent:boxOpen ? 0 : -40,duration:2});
+    gsap.to("#base",{yPercent:boxOpen ? 0 :40,duration:2});
     boxOpen = !boxOpen;
     firstTimeAnimation = false;
 }
