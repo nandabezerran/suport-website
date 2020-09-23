@@ -5,10 +5,11 @@ function animateBox(){
     gsap.to("#tampa",{yPercent:boxOpen ? 0 : -40,duration:1});
     gsap.to("#base",{yPercent:boxOpen ? 0 :40,duration:1});
     boxOpen = !boxOpen;
+    firstTimeAnimation = false;
 }
 
 function animateBoxOnScroll(){
-    if(!boxOpen && document.querySelector('.animacao').getBoundingClientRect().bottom <= (window.innerHeight || document.documentElement.clientHeight)){
+    if(firstTimeAnimation && document.querySelector('.animacao').getBoundingClientRect().bottom <= (window.innerHeight || document.documentElement.clientHeight)){
         animateBox();
     }
 
