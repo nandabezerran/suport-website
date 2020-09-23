@@ -10,7 +10,6 @@ function animateBox(){
 }
 
 function animateBoxOnScroll(){
-    console.log(isInViewPort(document.querySelector('.animacao')));
     if(firstTimeAnimation && isInViewPort(document.querySelector('.animacao'))){
         animateBox();
     }
